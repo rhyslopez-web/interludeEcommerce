@@ -1,0 +1,8 @@
+./server/node_modules
+./client/interlude/node_modules
+/conf
+/server/.env
+/server/environments
+
+
+# Environment configuration - *ENIRONMENT VARIABLES* 

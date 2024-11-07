@@ -1,0 +1,59 @@
+# Sellecting by ID
+###
+GET http://localhost:4600/products/1
+Content-Type: application/json
+
+
+# Displaying all products
+###
+GET http://localhost:4600/products
+Content-Type: application/json
+
+# Displaying available products
+###
+GET http://localhost:4600/displayAvailableProducts
+Content-Type: application/json
+
+
+
+# Updating
+###
+PUT  http://localhost:4600/products/
+Content-Type: application/json
+
+{
+    "image": "Product 2",
+    "title": "Product 2",
+    "description": "I just posted this and it should show ",
+    "price": 9999,
+    "inStock": true
+}
+
+
+
+###
+POST  http://localhost:4600/products
+Content-Type: application/json
+
+{
+    "image": "this would be an image",
+    "title": "This is a new product",
+    "description": "I just posted this and it should show ",
+    "price": 9999,
+    "inStock": true,
+    "displayProduct": true
+}
+
+
+###
+DELETE http://localhost:4600/products/
+
+
+###
+POST http://localhost:4600/validateuser
+Content-Type: application/json
+
+{
+  "email": "rhys.paulino@gmail.com",
+  "password": "12345"
+}

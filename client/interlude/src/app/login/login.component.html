@@ -1,0 +1,55 @@
+<div class="container">
+
+
+  <div class="row">
+
+    <div class="col-12 ">
+
+
+
+      <div class="login-wrap d-flex justify-content-center align-items-center ">
+        
+
+        <div class="login p-5 rounded-5 bg-light">
+
+          <div class="logo text-center mb-5">
+            <img src="/assets/banner.png" alt="" width="60%">
+          </div>
+
+          <div class="mb-3 rounded-4 p-5 bg-white">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" [(ngModel)]="email" id="email" class="form-control" placeholder="example@interlude.com"> <br>
+    
+            <label for="password" class="form-label">Password</label>
+            <input type="password" [(ngModel)]="password" id="password" placeholder="Password" class="form-control mb-3">
+            
+
+            <button (click)="login()" class="btn btn-success">Log in</button>
+
+          </div>
+    
+        </div>
+      </div>
+
+      
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<br><br>
+
+
+<br><br>
+<a href="forgotpassword">Forgot password?</a>
+
+<div [hidden]="hideLoginStatus">
+  <div class="message" *ngIf="loginSuccess">Great! You are an authenticated user</div>
+  <div class="message" *ngIf="!loginSuccess">Oops! Check you email and password.</div>
+</div>

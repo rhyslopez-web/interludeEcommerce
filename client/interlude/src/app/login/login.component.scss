@@ -1,0 +1,38 @@
+.login-wrap{
+    height: 100vh;
+}
+
+.login{
+    width: 40%;
+}
+
+.wrap{
+    height: 100vh;
+}
+
+.banner{
+    width: 40%;
+}
+
+
+
+.btn-success:hover{
+    box-shadow: 5px 5px 0px 2px  #333333;
+    transition: ease 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-success {
+      width: 40%;
+    }
+
+    .banner{
+        width: 80%;
+    }
+  }
+
+.background{
+    background-image: url(/assets/doodle.gif);
+    background-position: center;
+    background-size: 10%;
+}
