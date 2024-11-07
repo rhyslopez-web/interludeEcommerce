@@ -11,6 +11,7 @@ import { ProductUpdateComponent } from './product-update/product-update.componen
 
 const routes: Routes = [
 
+  {path: "", component: HomeComponent},
   {path: "products", component: ProductsComponent},
   {path: "home", component: HomeComponent},
   {path: "example", component: HttpComponent},
