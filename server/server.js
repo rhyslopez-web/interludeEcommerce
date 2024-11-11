@@ -61,93 +61,93 @@ server.get('/displayAvailableProducts', function(req,res){
 })
 
 
-// get product by ID
-server.get('/products/:id', function(req,res){
-    let SQLquery = "CALL getProductByID(?)"
+// // get product by ID
+// server.get('/products/:id', function(req,res){
+//     let SQLquery = "CALL getProductByID(?)"
 
-    db.query(SQLquery, [req.params.id], (error,data)=>{
-        (error)? res.json({error_message: error}) : res.json(data[0][0])
-    })
-})
+//     db.query(SQLquery, [req.params.id], (error,data)=>{
+//         (error)? res.json({error_message: error}) : res.json(data[0][0])
+//     })
+// })
 
-// delete by ID
-server.delete("/products/:id", function(req,res){
-    let SQLquery = "CALL deleteProductById(?)"
-    db.query(SQLquery, [req.params.id], (error,data)=>{
-        (error)? res.json({error_message: error}) : res.json({message: "The product has been deleted"})
+// // delete by ID
+// server.delete("/products/:id", function(req,res){
+//     let SQLquery = "CALL deleteProductById(?)"
+//     db.query(SQLquery, [req.params.id], (error,data)=>{
+//         (error)? res.json({error_message: error}) : res.json({message: "The product has been deleted"})
 
-    })
-})
+//     })
+// })
 
-// Updating
-server.put('/products/:id', (req,res) =>{
-    let SQLquery = "CALL updateProductById(?,?,?,?,?,?)"
+// // Updating
+// server.put('/products/:id', (req,res) =>{
+//     let SQLquery = "CALL updateProductById(?,?,?,?,?,?)"
     
 
-    db.query(SQLquery, [req.params.id, req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock] , (error,data) =>{
-        (error)? res.json({error_message: error}) : res.json({message: "The product has been updated" , data: data[0]})
-    })
+//     db.query(SQLquery, [req.params.id, req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock] , (error,data) =>{
+//         (error)? res.json({error_message: error}) : res.json({message: "The product has been updated" , data: data[0]})
+//     })
 
 
-})
+// })
 
 
-// inserting new product
-server.post('/products',function(req,res){
-    let image = req.body.image
-    let title = req.body.title
-    let description = req.body.description
-    let price  = req.body.price
-    let inStock = req.body.inStock
-    let displayProduct = req.body.displayProduct
+// // inserting new product
+// server.post('/products',function(req,res){
+//     let image = req.body.image
+//     let title = req.body.title
+//     let description = req.body.description
+//     let price  = req.body.price
+//     let inStock = req.body.inStock
+//     let displayProduct = req.body.displayProduct
 
-    let SQLquery = "CALL insertNewProduct(?,?,?,?,?,?)"
+//     let SQLquery = "CALL insertNewProduct(?,?,?,?,?,?)"
 
-    db.query(SQLquery,[req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock, req.body.displayProduct], function(error,data){
-        if(error){
-            res.json({error_message:error})
-        }
-        else{
-            res.json({message: "success" , data: data[0]})
-        }
-    })
-})
+//     db.query(SQLquery,[req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock, req.body.displayProduct], function(error,data){
+//         if(error){
+//             res.json({error_message:error})
+//         }
+//         else{
+//             res.json({message: "success" , data: data[0]})
+//         }
+//     })
+// })
 
-server.post('/validateuser', (req, res) => {
-    let SQLQuery = "CALL `validateUser`(?, ?)";
-    db.query(SQLQuery, [req.body.email, req.body.password], (error, data) => {
-        if(error){
-            res.json({ error_message: error});
-        }
-        else{
-           if(data[0].length > 0){
-            res.json(true);
-           }
-           else{
-            res.json(false);
-           }
-        }
-    })
-})
+// server.post('/validateuser', (req, res) => {
+//     let SQLQuery = "CALL `validateUser`(?, ?)";
+//     db.query(SQLQuery, [req.body.email, req.body.password], (error, data) => {
+//         if(error){
+//             res.json({ error_message: error});
+//         }
+//         else{
+//            if(data[0].length > 0){
+//             res.json(true);
+//            }
+//            else{
+//             res.json(false);
+//            }
+//         }
+//     })
+// })
 
-// Validating the user
+// // Validating the user
 
-server.post('/validateuser', (req, res) => {
-    let SQLQuery = "CALL `validateUser`(?, ?)";
-    db.query(SQLQuery, [req.body.email, req.body.password], (error, data) => {
-        if(error){
-            res.json({ error_message: error});
-        }
-        else{
-           if(data[0].length > 0){
-            res.json(true);
-           }
-           else{
-            res.json(false);
-           }
-        }
-    })
-})
+// server.post('/validateuser', (req, res) => {
+//     let SQLQuery = "CALL `validateUser`(?, ?)";
+//     db.query(SQLQuery, [req.body.email, req.body.password], (error, data) => {
+//         if(error){
+//             res.json({ error_message: error});
+//         }
+//         else{
+//            if(data[0].length > 0){
+//             res.json(true);
+//            }
+//            else{
+//             res.json(false);
+//            }
+//         }
+//     })
+// })
 
 
  
