@@ -1,5 +1,6 @@
 import React from 'react'
 import DashboardEditButton from '../DashboardEditButton/DashboardEditButton'
+import { Link } from 'react-router-dom'
 
 const ProductTableRow = ({id, name, description, price, variants, stock}) => {
   return (
@@ -12,7 +13,9 @@ const ProductTableRow = ({id, name, description, price, variants, stock}) => {
         <span className='font-semibold'>${price}</span>
 
         <div className='flex justify-end'>
-          <DashboardEditButton/>
+          <Link to={`/productDetails/` + id}>
+            <DashboardEditButton/>
+          </Link>
         </div>
 
     </li>

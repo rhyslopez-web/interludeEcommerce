@@ -61,14 +61,14 @@ server.get('/displayAvailableProducts', function(req,res){
 })
 
 
-// // get product by ID
-// server.get('/products/:id', function(req,res){
-//     let SQLquery = "CALL getProductByID(?)"
+// get product by ID
+server.get('/products/:id', function(req,res){
+    let SQLquery = "CALL getProductByID(?)"
 
-//     db.query(SQLquery, [req.params.id], (error,data)=>{
-//         (error)? res.json({error_message: error}) : res.json(data[0][0])
-//     })
-// })
+    db.query(SQLquery, [req.params.id], (error,data)=>{
+        (error)? res.json({error_message: error}) : res.json(data[0][0])
+    })
+})
 
 // // delete by ID
 // server.delete("/products/:id", function(req,res){

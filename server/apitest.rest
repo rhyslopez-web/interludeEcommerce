@@ -1,6 +1,6 @@
 # Sellecting by ID
 ###
-GET http://localhost:4600/products/1
+GET http://localhost:4600/products/2
 Content-Type: application/json
 
 
