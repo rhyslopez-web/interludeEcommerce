@@ -70,14 +70,14 @@ server.get('/products/:id', function(req,res){
     })
 })
 
-// // delete by ID
-// server.delete("/products/:id", function(req,res){
-//     let SQLquery = "CALL deleteProductById(?)"
-//     db.query(SQLquery, [req.params.id], (error,data)=>{
-//         (error)? res.json({error_message: error}) : res.json({message: "The product has been deleted"})
+// delete by ID
+server.delete("/products/:id", function(req,res){
+    let SQLquery = "CALL deleteProductById(?)"
+    db.query(SQLquery, [req.params.id], (error,data)=>{
+        (error)? res.json({error_message: error}) : res.json({message: "The product has been deleted"})
 
-//     })
-// })
+    })
+})
 
 // // Updating
 // server.put('/products/:id', (req,res) =>{
@@ -92,26 +92,26 @@ server.get('/products/:id', function(req,res){
 // })
 
 
-// // inserting new product
-// server.post('/products',function(req,res){
-//     let image = req.body.image
-//     let title = req.body.title
-//     let description = req.body.description
-//     let price  = req.body.price
-//     let inStock = req.body.inStock
-//     let displayProduct = req.body.displayProduct
+// inserting new product
+server.post('/products',function(req,res){
+    let image = req.body.image
+    let title = req.body.title
+    let description = req.body.description
+    let price  = req.body.price
+    let inStock = req.body.inStock
+    let displayProduct = req.body.displayProduct
 
-//     let SQLquery = "CALL insertNewProduct(?,?,?,?,?,?)"
+    let SQLquery = "CALL insertNewProduct(?,?,?,?,?,?)"
 
-//     db.query(SQLquery,[req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock, req.body.displayProduct], function(error,data){
-//         if(error){
-//             res.json({error_message:error})
-//         }
-//         else{
-//             res.json({message: "success" , data: data[0]})
-//         }
-//     })
-// })
+    db.query(SQLquery,[req.body.image, req.body.title, req.body.description, req.body.price, req.body.inStock, req.body.displayProduct], function(error,data){
+        if(error){
+            res.json({error_message:error})
+        }
+        else{
+            res.json({message: "success" , data: data[0]})
+        }
+    })
+})
 
 // server.post('/validateuser', (req, res) => {
 //     let SQLQuery = "CALL `validateUser`(?, ?)";

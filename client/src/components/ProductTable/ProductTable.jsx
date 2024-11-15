@@ -1,14 +1,17 @@
 import React from 'react'
 import DashboardAddButton from '../DashboardAddButton/DashboardAddButton'
+import { Link } from 'react-router-dom'
 
 const ProductTable = ({children}) => {
   return (
-    <div className='bg-white rounded-2xl lg:p-10 md:p-5 p-0 flex flex-col gap-10 text-sm lg:text-md'>
+    <div className='rounded-2xl lg:p-10 md:p-5 p-0 flex flex-col gap-10 text-sm lg:text-md'>
 
         <div className='flex flex-col lg:flex-row justify-between gap-5'>
             <h2 className='font-bold text-2xl'>Your Products</h2>
             <div>
-                <DashboardAddButton/>
+                <Link to='/addProduct'>
+                    <DashboardAddButton/>
+                </Link>
             </div>
         </div>
 

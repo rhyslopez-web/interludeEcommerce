@@ -5,6 +5,7 @@ import './index.css'
 import App from './App.jsx'
 import AdminProductPage from './pages/AdminProductPage/AdminProductPage.jsx'
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
+import AdminAddProduct from './pages/AdminAddProduct/AdminAddProduct.jsx'
 
 const queryClient = new QueryClient()
 
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
   {
     path: '/productDetails/:id',
     element: <AdminProductPage/>
+  },
+  {
+    path: '/addProduct',
+    element: <AdminAddProduct/>
   }
 ])
 
